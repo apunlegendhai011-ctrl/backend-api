@@ -25,7 +25,6 @@
 - [Deployment](#deployment)
   - [Docker Deployment](#docker-deployment)
   - [Vercel Deployment](#vercel-deployment-serverless--recommended)
-  - [Replit Deployment](#replit-deployment)
 - [Video Integration](#video-integration)
 - [Documentation](#documentation)
   - [Anime Home Page](#1-get-anime-home-page)
@@ -271,15 +270,7 @@ docker-compose up -d
 | `RATE_LIMIT_WINDOW_MS` | `60000` | No |
 | `RATE_LIMIT_LIMIT` | `100` | No |
 
-For detailed instructions, see [DEPLOYMENT.md](./DEPLOYMENT.md)
-
-### Replit Deployment
-
-1. Import this repository into Replit
-2. Click the Run button
-3. Your API will be available at your Replit URL
-
-For detailed deployment instructions, troubleshooting, and best practices, see the [DEPLOYMENT.md](https://github.com/ryanwtf7/hianime-api/blob/master/DEPLOYMENT.md) guide.
+---
 
 ---
 
