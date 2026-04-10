@@ -6,7 +6,7 @@ WORKDIR /app
 COPY package.json bun.lock* ./
 
 # Install all dependencies
-RUN bun install --production
+RUN bun install
 
 # Copy source code
 COPY . .
