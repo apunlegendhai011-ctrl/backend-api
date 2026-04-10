@@ -1,7 +1,6 @@
 import app from './src/app';
-import config from './src/config/config';
 
-const PORT = config.port;
+const PORT = parseInt(Bun.env.PORT || process.env.PORT || '5000');
 
 console.log(`Starting server with config:`, {
   port: PORT,
