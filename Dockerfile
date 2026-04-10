@@ -11,7 +11,8 @@ RUN cd /temp/dev && bun install
 
 # Install with --production (exclude devDependencies)
 RUN mkdir -p /temp/prod
-COPY package.json bun.lock* /temp/prod/
+COPY package.json /temp/prod/
+COPY --from=install /temp/dev/bun.lock /temp/prod/
 RUN cd /temp/prod && bun install --production
 
 # Copy node_modules from temp directory
