@@ -28,7 +28,7 @@ COPY --from=prerelease /app/package.json .
 COPY --from=prerelease /app/src ./src
 
 # Expose the port the app runs on
-EXPOSE 3000
+EXPOSE 5000
 
 # Set environment to production
 ENV NODE_ENV=production
