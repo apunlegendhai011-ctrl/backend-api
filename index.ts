@@ -3,7 +3,15 @@ import config from './src/config/config';
 
 const PORT = config.port;
 
-Bun.serve({
+console.log(`Starting server with config:`, {
+  port: PORT,
+  hostname: '0.0.0.0',
+  nodeEnv: process.env.NODE_ENV,
+  bunEnvPort: Bun.env.PORT,
+  processEnvPort: process.env.PORT,
+});
+
+const server = Bun.serve({
   port: PORT,
   hostname: '0.0.0.0',
   fetch: app.fetch,
