@@ -12,7 +12,9 @@
   "homepage": "https://github.com/ryanwtf7/hianime-api#readme",
   "scripts": {
     "dev": "bun run --hot index.ts",
+    "dev:node": "tsx watch index.node.ts",
     "start": "bun index.ts",
+    "start:node": "tsx index.node.ts",
     "build": "bun build index.ts --outdir ./dist --target bun",
     "lint": "eslint . --fix",
     "format": "prettier --write .",
@@ -29,7 +31,8 @@
   "dependencies": {
     "@hono/node-server": "^1.8.2",
     "axios": "^1.13.6",
-    "cheerio": "^1.0.0-rc.12"
+    "cheerio": "^1.0.0-rc.12",
+    "hono": "^4.0.0"
   },
   "devDependencies": {
     "@types/axios": "^0.14.4",
@@ -48,6 +51,7 @@
     "prettier": "^3.2.5",
     "ts-jest": "^29.4.6",
     "ts-node": "^10.9.2",
+    "tsx": "^4.19.2",
     "typescript": "^5.3.3",
     "vitest": "^4.1.1"
   }
