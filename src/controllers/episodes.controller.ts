@@ -22,7 +22,13 @@ const episodesController = async (c: Context): Promise<Episode[]> => {
     });
   }
 
-  const response = extractEpisodes(result.data);
+  let html = result.data;
+  try {
+    const json = JSON.parse(result.data);
+    if (json.html) html = json.html;
+  } catch (e) {}
+
+  const response = extractEpisodes(html);
   return response;
 };
 
