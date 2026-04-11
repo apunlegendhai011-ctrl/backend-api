@@ -12,7 +12,7 @@ export const extractEpisodes = (html: string): Episode[] => {
   const $ = load(html);
 
   const response: Episode[] = [];
-  $('.ssl-item.ep-item').each((i, el) => {
+  $('.ep-item').each((i, el) => {
     const obj: Episode = {
       title: null,
       alternativeTitle: null,
@@ -21,8 +21,8 @@ export const extractEpisodes = (html: string): Episode[] => {
       episodeNumber: i + 1,
     };
     obj.title = $(el).attr('title') || null;
-    obj.id = $(el).attr('href')?.replace('/watch/', '').replace('?', '::') || null;
-    obj.isFiller = $(el).hasClass('ssl-item-filler');
+    obj.id = $(el).attr('href')?.replace('/watch/', '').replace('?', '::') || $(el).attr('data-id') || null;
+    obj.isFiller = $(el).hasClass('ssl-item-filler') || $(el).hasClass('filler');
 
     obj.alternativeTitle = $(el).find('.ep-name.e-dynamic-name').attr('data-jname') || null;
 
